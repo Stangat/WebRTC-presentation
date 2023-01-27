@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 style="color: orange">Web RTC</h1>
+        </section>
+
+        <section>
+          <section>
+            <h2>What Is WebRTC?</h2>
+          </section>
+          <section>
+            WebRTC (Web Real-Time Communication) is a free and open-source
+            project providing web browsers and mobile applications with
+            real-time communication (RTC) via application programming interfaces
+            (APIs).
+            <img
+              data-src="https://habrastorage.org/getpro/habr/post_images/aff/ed1/fee/affed1fee433a9375eefd24a753a89b8.png"
+              width="700"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Why Choose WebRTC?</h2>
+          </section>
+          <section>
+            <p style="text-align: left; color: orange">
+              WebRTC has a wide range of benefits for both the broadcaster and
+              the receiving audience. Here are the top:
+            </p>
+            <ul>
+              <li
+                class="fragment"
+                style="font-size: 34px; padding-bottom: 25px"
+              >
+                WebRTC is supported by most major web browsers, including Google
+                Chrome for desktop and Android, Mozilla Firefox for desktop and
+                Android, and Safari, and works on any operating system.
+              </li>
+              <li
+                class="fragment"
+                style="font-size: 34px; padding-bottom: 25px"
+              >
+                WebRTC does not require third-party components or plugins and is
+                free open-source software.
+              </li>
+              <li class="fragment" style="font-size: 34px">
+                WebRTC allowing direct peer-to-peer communication.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>So how does all of this work?</h2>
+          </section>
+          <section>
+            <p style="text-align: left; color: orange">
+              There are four sequential steps that must be taken to establish a
+              connection:
+            </p>
+            <ul>
+              <li class="fragment" style="padding-bottom: 25px">Signaling</li>
+              <li class="fragment" style="padding-bottom: 25px">Connecting</li>
+              <li class="fragment" style="padding-bottom: 25px">Securing</li>
+              <li class="fragment">Communicating</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Signaling</h2>
+          </section>
+          <section>
+            Signaling is used to initiate the call, allowing two independent
+            WebRTC agents to start communicating.
+            <img
+              data-src="https://www.agora.io/en/wp-content/uploads/2022/06/how-does-webrtc-work-1.gif"
+              width="700"
+            />
+          </section>
+
+          <section>
+            <h2>Connecting</h2>
+          </section>
+          <section>
+            Once SDP offers are exchanged each peer will then make a series of
+            requests to a STUN server which will generate a list of ICE
+            candidates to use.
+            <img
+              data-src="https://www.agora.io/en/wp-content/uploads/2022/06/how-does-webrtc-work-4.gif"
+              width="700"
+            />
+          </section>
+          <section>
+            <h2>Securing</h2>
+          </section>
+          <section>
+            Security is achived through two more protocols: DTLS (Datagram
+            Transport Layer Security) and SRTP (Secure Real-Time Transport
+            Protocol).
+            <img
+              data-src="https://webrtc-security.github.io/images/diagram_4_en.png"
+              width="600"
+            />
+          </section>
+
+          <section>
+            <h2>Communicating</h2>
+          </section>
+          <section>
+            To make communication possible, WebRTC use two protocols: RTP
+            (Real-time Transport Protocol) - to exchange media encrypted with
+            SRTP, and SCTP (Stream Control Transmission Protocol) - to send and
+            receive DataChannel messages encrypted with DTLS.
+            <img
+              data-src="https://d3i71xaburhd42.cloudfront.net/bbd7c18cc154c128115bbcde86e17fea4571e064/2-Figure1-1.png"
+              width="600"
+              height="400"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>WebRTC - a collection of protocols</h2>
+          </section>
+          <section>
+            A good way to visualize it is a ‘WebRTC Agent’ is really just an
+            orchestrator of many different protocols.
+            <img
+              data-src="https://webrtcforthecurious.com/docs/images/01-webrtc-agent.png"
+              width="600"
+            />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>WebRTC API</h2>
+          </section>
+          <section>
+            <p style="text-align: left; color: orange">
+              There are three main categories of APIs that exist in WebRTC:
+            </p>
+            <ul>
+              <li class="fragment" style="padding-bottom: 25px">
+                RTCPeerConnection
+              </li>
+              <li class="fragment" style="padding-bottom: 25px">
+                RTCDataChannel
+              </li>
+              <li class="fragment" style="padding-bottom: 25px">
+                Media Capture and Streams
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>What is WebRTC used for?</h2>
+          </section>
+          <section>
+            <p style="text-align: left; color: orange">
+              You can group WebRTC applications into 4 broad categories:
+            </p>
+            <ul>
+              <li class="fragment" style="padding-bottom: 25px">
+                Conversational voice and video
+              </li>
+              <li class="fragment" style="padding-bottom: 25px">
+                Live streaming
+              </li>
+              <li class="fragment" style="padding-bottom: 25px">
+                Data transfer
+              </li>
+              <li class="fragment">Privacy</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Thank You!</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
